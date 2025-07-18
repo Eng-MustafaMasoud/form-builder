@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for the form builder */
+.form-builder-overlay {
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-component {
+  transition: all 0.2s ease-in-out;
+}
+
+.form-component:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure modal content stays within bounds */
+.form-builder-modal .ant-modal-content {
+  max-height: 95vh;
+  overflow: hidden;
+}
+
+.form-builder-modal .ant-modal-body {
+  padding: 0;
+  max-height: calc(95vh - 110px);
+  overflow: hidden;
+}
+
+/* Ensure tabs content is properly contained */
+.ant-tabs-content-holder {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ant-tabs-tabpane {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ant-tabs-tabpane-active {
+  overflow: hidden;
+}
+
+/* Force the form builder container to have proper height */
+.ant-tabs-tabpane .flex-1 {
+  min-height: 0;
+}
+
+/* Ensure the form builder tab content scrolls properly */
+.ant-tabs-tabpane[data-key="builder"] .form-builder-components {
+  height: 100%;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* Form builder specific scrolling */
+.ant-tabs-tabpane-active {
+  overflow-y: auto !important;
+}
+
+/* Ensure form components container scrolls properly */
+.form-builder-components {
+  overflow-y: auto !important;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e0 #f7fafc;
+  min-height: 0 !important;
+  max-height: 100% !important;
+  height: 100% !important;
+}
+
+/* Custom scrollbar styling for webkit browsers */
+.form-builder-components::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form-builder-components::-webkit-scrollbar-track {
+  background: #f7fafc;
+  border-radius: 4px;
+}
+
+.form-builder-components::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 4px;
+}
+
+.form-builder-components::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Ensure buttons are always visible */
+.ant-btn {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.ant-btn-primary {
+  background-color: #1890ff !important;
+  border-color: #1890ff !important;
+  color: white !important;
+}
+
+.ant-btn-primary:hover {
+  background-color: #40a9ff !important;
+  border-color: #40a9ff !important;
+}
+
+.ant-btn-danger {
+  background-color: #ff4d4f !important;
+  border-color: #ff4d4f !important;
+  color: white !important;
+}
+
+.ant-btn-danger:hover {
+  background-color: #ff7875 !important;
+  border-color: #ff7875 !important;
+}
